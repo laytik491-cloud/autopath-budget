@@ -1,0 +1,24 @@
+* text=auto
+*.py text eol=lf
+*.mjs text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.sql text eol=lf
+*.json text eol=lf
+*.webmanifest text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.bat text eol=crlf
+*.command text eol=lf
+*.wasm -text
+*.zip -text
+*.sqlite -text
+*.docx -text
+*.png -text
+*.cjs text eol=lf
+*.gradle text eol=lf
+packaging/android/gradlew text eol=lf
+*.jar -text
+*.ico -text
+*.icns -text

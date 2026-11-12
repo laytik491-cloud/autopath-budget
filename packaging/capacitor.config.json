@@ -1,0 +1,19 @@
+{
+  "appId": "ru.samarin.autopathbudget",
+  "appName": "АвтоПуть Бюджет",
+  "webDir": "app",
+  "server": {
+    "hostname": "localhost",
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#111213",
+    "allowMixedContent": false
+  },
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "native",
+      "style": "DARK"
+    }
+  }
+}

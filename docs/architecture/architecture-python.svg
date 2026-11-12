@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1890" viewBox="0 0 1600 1890">
+<rect width="100%" height="100%" fill="white"/>
+<polygon points="520,50 1080,20 1080,150 520,150" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="800" y="96.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="40" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Точки или километры</text>
+<rect x="30" y="230" width="430" height="160" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="52,230 52,390" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="438,230 438,390" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="245.0" y="288.04" font-family="Arial, DejaVu Sans, sans-serif" font-size="36" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">AppShell · JavaScript</text>
+<text x="245.0" y="331.96" font-family="Arial, DejaVu Sans, sans-serif" font-size="36" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Загрузка PWA</text>
+<rect x="520" y="230" width="560" height="160" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="542,230 542,390" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1058,230 1058,390" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="800.0" y="287.43" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">PlannerUI · JavaScript</text>
+<text x="800.0" y="332.57" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Ввод данных, карта Leaflet</text>
+<polyline points="800,150 800,230" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="807.8502459842052,214.92108631275218 800,230 792.1497540157948,214.92108631275218" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="460,310 520,310" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="504.92108631275215,302.14975401579477 520,310 504.92108631275215,317.85024598420523" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="520" y="510" width="560" height="170" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="542,510 542,680" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1058,510 1058,680" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="800.0" y="572.43" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">TripController · Python</text>
+<text x="800.0" y="617.57" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Команды и состояние</text>
+<polyline points="800,390 800,510" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="807.8502459842052,494.92108631275215 800,510 792.1497540157948,494.92108631275215" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="631.6666666666666" y="412.33" width="336.6666666666667" height="34.22" fill="white"/>
+<text x="800" y="430.31" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">main.mjs</text>
+<rect x="641.6666666666666" y="447.71" width="316.6666666666667" height="34.22" fill="white"/>
+<text x="800" y="465.69" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">postMessage: команда</text>
+<rect x="1140" y="510" width="430" height="170" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="1162,510 1162,680" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1548,510 1548,680" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="1355.0" y="573.04" font-family="Arial, DejaVu Sans, sans-serif" font-size="36" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">EventLog · Python</text>
+<text x="1355.0" y="616.96" font-family="Arial, DejaVu Sans, sans-serif" font-size="36" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Журнал в SQLite</text>
+<polyline points="1080,595 1140,595" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1124.921086312752,587.1497540157948 1140,595 1124.921086312752,602.8502459842052" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="30" y="830" width="470" height="170" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="52,830 52,1000" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="478,830 478,1000" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="265.0" y="874.74" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">GeoAdapter · Python</text>
+<text x="265.0" y="915.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">pyfetch / Fetch bridge</text>
+<text x="265.0" y="955.26" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Только в режиме карты</text>
+<rect x="565" y="830" width="470" height="170" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="587,830 587,1000" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1013,830 1013,1000" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="800.0" y="872.3" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">FuelCalculator · Python</text>
+<text x="800.0" y="915.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">decimal</text>
+<text x="800.0" y="957.7" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Проверка и расчёт</text>
+<rect x="1100" y="830" width="470" height="170" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="1122,830 1122,1000" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1548,830 1548,1000" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="1335.0" y="872.3" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">DraftRepository · Python</text>
+<text x="1335.0" y="915.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">sqlite3</text>
+<text x="1335.0" y="957.7" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">SQLite → IndexedDB</text>
+<polyline points="650,680 650,745 265,745 265,830" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="272.85024598420523,814.9210863127522 265,830 257.14975401579477,814.9210863127522" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="800,680 800,830" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="807.8502459842052,814.9210863127522 800,830 792.1497540157948,814.9210863127522" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="950,680 950,745 1335,745 1335,830" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1342.8502459842052,814.9210863127522 1335,830 1327.1497540157948,814.9210863127522" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="520" y="1160" width="560" height="160" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="542,1160 542,1320" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1058,1160 1058,1320" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="800.0" y="1217.43" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">TripController · Python</text>
+<text x="800.0" y="1262.57" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Приём результатов</text>
+<polyline points="265,1000 265,1080 650,1080 650,1160" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="657.8502459842052,1144.921086312752 650,1160 642.1497540157948,1144.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="800,1000 800,1160" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="807.8502459842052,1144.921086312752 800,1160 792.1497540157948,1144.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1335,1000 1335,1080 950,1080 950,1160" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="957.8502459842052,1144.921086312752 950,1160 942.1497540157948,1144.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="520" y="1440" width="560" height="160" fill="white" stroke="black" stroke-width="2.6"/>
+<polyline points="542,1440 542,1600" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1058,1440 1058,1600" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="800.0" y="1497.43" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">PlannerUI · JavaScript</text>
+<text x="800.0" y="1542.57" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Обновление экрана</text>
+<polyline points="800,1320 800,1440" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="807.8502459842052,1424.921086312752 800,1440 792.1497540157948,1424.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="631.6666666666666" y="1344.33" width="336.6666666666667" height="34.22" fill="white"/>
+<text x="800" y="1362.31" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">main.mjs</text>
+<rect x="631.0" y="1379.71" width="338.0" height="34.22" fill="white"/>
+<text x="800" y="1397.69" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">postMessage: результат</text>
+<polygon points="555,1680 1080,1680 1045,1810 520,1810" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="800" y="1721.82" font-family="Arial, DejaVu Sans, sans-serif" font-size="38" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Маршрут, расходы,</text>
+<text x="800" y="1768.18" font-family="Arial, DejaVu Sans, sans-serif" font-size="38" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">статус сохранения</text>
+<polyline points="800,1600 800,1680" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="807.8502459842052,1664.921086312752 800,1680 792.1497540157948,1664.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<text x="800" y="1850.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="28" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Повторённые блоки обозначают операции тех же компонентов.</text>
+</svg>

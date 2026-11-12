@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "date": "2026-11-11",
+  "yaml": "parsed",
+  "ci_events": [
+    "push",
+    "pull_request",
+    "workflow_dispatch"
+  ],
+  "publish_events": [
+    "workflow_dispatch"
+  ],
+  "publish_path": "app",
+  "python_and_sql_checks": true,
+  "required_files_not_ignored": [
+    "app/vendor/pyodide/python_stdlib.zip",
+    "app/vendor/pyodide/pyodide.asm.wasm",
+    "database/autopath.sqlite",
+    "tests/fixtures/schema-v1.sqlite",
+    ".github/workflows/pages.yml"
+  ],
+  "temporary_files_ignored": [
+    ".DS_Store",
+    ".idea/workspace.xml",
+    "__pycache__/test.pyc",
+    "node_modules/playwright/index.js",
+    "database/current.sqlite-wal",
+    "release/test.zip"
+  ],
+  "github_workflows_executed": false
+}

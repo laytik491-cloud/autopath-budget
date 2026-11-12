@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "date": "2026-11-11",
+  "browser": "151.0.7922.34",
+  "checks": [
+    {
+      "id": "GH-01",
+      "title": "Сетевой адаптер включён, интернет недоступен",
+      "status": "Пройден",
+      "fact": "При navigator.onLine=true запрос с реальным отказом fetch показывает ошибку; ручные150км=180руб./чел.; ложного индикатора нет."
+    },
+    {
+      "id": "GH-02",
+      "title": "Доступный сервис при отрицательном флаге браузера",
+      "status": "Пройден",
+      "fact": "navigator.onLine=false не блокирует доступный тестовый ответ:100км=8л,480руб.,120руб./чел."
+    },
+    {
+      "id": "GH-03",
+      "title": "Публикация app под именем репозитория",
+      "status": "Пройден",
+      "fact": {
+        "scope": "/autopath-budget/",
+        "files": 30,
+        "paths": [
+          "/autopath-budget/",
+          "/autopath-budget/index.html",
+          "/autopath-budget/style.css",
+          "/autopath-budget/main.mjs",
+          "/autopath-budget/worker.mjs",
+          "/autopath-budget/storage.mjs",
+          "/autopath-budget/config.json",
+          "/autopath-budget/schema.sql",
+          "/autopath-budget/manifest.webmanifest",
+          "/autopath-budget/icon.svg",
+          "/autopath-budget/vendor/icons/icon-192.png",
+          "/autopath-budget/vendor/icons/icon-512.png",
+          "/autopath-budget/python/calculator.py",
+          "/autopath-budget/python/geo.py",
+          "/autopath-budget/python/repository.py",
+          "/autopath-budget/python/controller.py",
+          "/autopath-budget/python/schema-v1.sql",
+          "/autopath-budget/vendor/leaflet/leaflet.js",
+          "/autopath-budget/vendor/leaflet/leaflet.css",
+          "/autopath-budget/vendor/leaflet/images/layers.png",
+          "/autopath-budget/vendor/leaflet/images/layers-2x.png",
+          "/autopath-budget/vendor/leaflet/images/marker-icon.png",
+          "/autopath-budget/vendor/leaflet/images/marker-icon-2x.png",
+          "/autopath-budget/vendor/leaflet/images/marker-shadow.png",
+          "/autopath-budget/vendor/pyodide/pyodide.js",
+          "/autopath-budget/vendor/pyodide/pyodide.mjs",
+          "/autopath-budget/vendor/pyodide/pyodide.asm.mjs",
+          "/autopath-budget/vendor/pyodide/pyodide.asm.wasm",
+          "/autopath-budget/vendor/pyodide/python_stdlib.zip",
+          "/autopath-budget/vendor/pyodide/pyodide-lock.json"
+        ],
+        "offlineReload": true,
+        "manualDistance": "300км",
+        "perPerson": "360руб.",
+        "note": "Локальная имитация пути GitHub Pages; на GitHub workflow не запускался."
+      }
+    }
+  ],
+  "errors": []
+}

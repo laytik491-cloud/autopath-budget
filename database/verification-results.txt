@@ -1,0 +1,226 @@
+SQLite 3.53.1; 26/26 проверок пройдено.
+
+DB-01 Создание схемы
+Корректный запрос:
+schema.sql; SELECT name FROM sqlite_master; PRAGMA foreign_keys; PRAGMA user_version;
+Недопустимые запросы:
+Результат: Созданы draft, point, route, manual_trip, event_log; foreign_keys = 1; user_version = 2.
+Статус: Пройден
+
+DB-02 INSERT SELECT и JOIN
+Корректный запрос:
+SELECT d.id,a.label,b.label,r.distance_m,r.duration_s,d.consumption_text,d.price_text,d.participants
+FROM draft d JOIN point a ON a.draft_id=d.id AND a.position=d.start_position
+JOIN point b ON b.draft_id=d.id AND b.position=d.end_position
+JOIN route r ON r.draft_id=d.id AND r.points_revision=d.points_revision;
+Недопустимые запросы:
+Результат: seed.sql добавил 1 черновик, 2 точки, 1 маршрут и 2 события. JOIN: current; Точка A → Точка B; 600000 м; 7200 с; C=8; F=60; N=4.
+Статус: Пройден
+
+DB-03 UNIQUE для координат точек
+Корректный запрос:
+UPDATE point SET lat=60.1,lon=151.9 WHERE position=1;
+Недопустимые запросы:
+UPDATE point SET lat=59.5,lon=150.8 WHERE position=1;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_UNIQUE
+Статус: Пройден
+
+DB-04 NOT NULL для обязательного поля
+Корректный запрос:
+UPDATE point SET label='Точка B2' WHERE position=1;
+Недопустимые запросы:
+UPDATE point SET label=NULL WHERE position=1;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_NOTNULL
+Статус: Пройден
+
+DB-05 Внешний ключ точки
+Корректный запрос:
+UPDATE point SET label='Точка B2' WHERE draft_id='current' AND position=1;
+Недопустимые запросы:
+INSERT INTO point VALUES ('missing',0,'Точка X',1,2);
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_FOREIGNKEY
+Статус: Пройден
+
+DB-06 Единственный текущий черновик
+Корректный запрос:
+UPDATE draft SET revision=2 WHERE id='current';
+Недопустимые запросы:
+INSERT INTO draft (id,schema_version,revision,points_revision,consumption_text,price_text,participants) VALUES ('other',1,1,1,'8','60',4);
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-07 Первичный ключ черновика
+Корректный запрос:
+UPDATE draft SET revision=2 WHERE id='current';
+Недопустимые запросы:
+INSERT INTO draft (id,schema_version,revision,points_revision,consumption_text,price_text,participants) VALUES ('current',1,2,2,'8','60',4);
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_PRIMARYKEY
+Статус: Пройден
+
+DB-08 Две обязательные точки на COMMIT
+Корректный запрос:
+UPDATE point SET label='Точка B2' WHERE position=1;
+Недопустимые запросы:
+DELETE FROM point WHERE position=1;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_FOREIGNKEY
+Статус: Пройден
+
+DB-09 Обязательный маршрут на COMMIT
+Корректный запрос:
+UPDATE route SET duration_s=3600 WHERE draft_id='current';
+Недопустимые запросы:
+DELETE FROM route;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_FOREIGNKEY
+Статус: Пройден
+
+DB-10 Участники только целые 1–9
+Корректный запрос:
+UPDATE draft SET participants=1; UPDATE draft SET participants=9;
+Недопустимые запросы:
+UPDATE draft SET participants=0;
+UPDATE draft SET participants=10;
+UPDATE draft SET participants=1.5;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-11 Расход 0,1–100 точно
+Корректный запрос:
+UPDATE draft SET consumption_text='0.1'; UPDATE draft SET consumption_text='100';
+Недопустимые запросы:
+UPDATE draft SET consumption_text='0.099';
+UPDATE draft SET consumption_text='100.001';
+UPDATE draft SET consumption_text='100.00000000000000001';
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-12 Цена 0,01–1000 точно
+Корректный запрос:
+UPDATE draft SET price_text='0.01'; UPDATE draft SET price_text='1000';
+Недопустимые запросы:
+UPDATE draft SET price_text='0.009';
+UPDATE draft SET price_text='1000.001';
+UPDATE draft SET price_text='1000.00000000000000001';
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-13 Диапазоны координат
+Корректный запрос:
+UPDATE point SET lat=-90,lon=-180 WHERE position=0; UPDATE point SET lat=90,lon=180 WHERE position=1;
+Недопустимые запросы:
+UPDATE point SET lat=90.001 WHERE position=0;
+UPDATE point SET lon=180.001 WHERE position=0;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-14 Положительное конечное расстояние
+Корректный запрос:
+UPDATE route SET distance_m=1;
+Недопустимые запросы:
+UPDATE route SET distance_m=0;
+UPDATE route SET distance_m=-1;
+UPDATE route SET distance_m=1e999;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-15 Положительная конечная длительность
+Корректный запрос:
+UPDATE route SET duration_s=1;
+Недопустимые запросы:
+UPDATE route SET duration_s=0;
+UPDATE route SET duration_s=1e999;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-16 Поддерживаемая версия DTO
+Корректный запрос:
+UPDATE draft SET schema_version=1;
+Недопустимые запросы:
+UPDATE draft SET schema_version=99;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-17 Маршрут связан с версией точек
+Корректный запрос:
+UPDATE route SET distance_m=300000 WHERE points_revision=1;
+Недопустимые запросы:
+UPDATE route SET points_revision=2;
+UPDATE draft SET points_revision=2;
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_FOREIGNKEY, SQLITE_CONSTRAINT_FOREIGNKEY
+Статус: Пройден
+
+DB-18 Формат десятичного текста
+Корректный запрос:
+UPDATE draft SET consumption_text='8.1234567890123456789';
+Недопустимые запросы:
+UPDATE draft SET consumption_text='8,5';
+UPDATE draft SET consumption_text='abc';
+UPDATE draft SET consumption_text='1e1';
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-19 Распознаваемая дата маршрута
+Корректный запрос:
+UPDATE route SET obtained_at='2026-10-13T00:00:00Z';
+Недопустимые запросы:
+UPDATE route SET obtained_at='not-a-date';
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-20 Журнал последних 100 событий
+Корректный запрос:
+DELETE FROM event_log;
+WITH RECURSIVE seq(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM seq WHERE n<100)
+INSERT INTO event_log(occurred_at,code,app_version,status)
+SELECT strftime('%Y-%m-%dT%H:%M:%SZ','2026-10-12T13:00:00Z','+'||n||' seconds'),'ROUTE_READY','1.0.0','ready' FROM seq;
+INSERT INTO event_log(occurred_at,code,app_version,status) VALUES ('2026-10-12T13:02:00Z','ROUTE_READY','1.0.0','ready');
+Недопустимые запросы:
+Результат: После 100 добавлений — 100 строк. После 101-го — 100 строк, первое из добавленных событий удалено.
+Статус: Пройден
+
+DB-21 Разрешённые поля журнала
+Корректный запрос:
+INSERT INTO event_log(occurred_at,code,app_version,status) VALUES ('2026-10-12T13:00:02Z','APP_UPDATED','1.0.0','updated');
+Недопустимые запросы:
+UPDATE event_log SET code='USER_ADDRESS';
+UPDATE event_log SET status='password';
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-22 Откат неполного сохранения
+Корректный запрос:
+BEGIN; UPDATE draft SET consumption_text='10'; DELETE FROM point WHERE position=1; COMMIT; ROLLBACK;
+Недопустимые запросы:
+Результат: COMMIT отклонён по FK; после ROLLBACK расход снова 8, обе точки на месте.
+Статус: Пройден
+
+DB-23 Каскадная и полная очистка
+Корректный запрос:
+BEGIN; DELETE FROM draft; DELETE FROM event_log; COMMIT;
+Недопустимые запросы:
+Результат: В draft, point, route и event_log по 0 строк. Зависимые точки и маршрут удалены каскадом.
+Статус: Пройден
+
+DB-24 Повторное открытие и целостность
+Корректный запрос:
+backup в файл; close; connect; JOIN; PRAGMA foreign_key_check; PRAGMA integrity_check;
+Недопустимые запросы:
+Результат: После закрытия и повторного открытия файла TD-01 восстановлен. foreign_key_check: 0 нарушений; integrity_check: ok. Браузерный IndexedDB здесь не проверялся.
+Статус: Пройден
+
+DB-25 Ограничения ручного расстояния
+Корректный запрос:
+INSERT INTO manual_trip VALUES ('current',1,'150','8','60',4);
+Недопустимые запросы:
+INSERT INTO manual_trip VALUES ('current',1,'0','8','60',4);
+INSERT INTO manual_trip VALUES ('current',1,'-1','8','60',4);
+INSERT INTO manual_trip VALUES ('current',1,'1000001','8','60',4);
+INSERT INTO manual_trip VALUES ('current',1,'abc','8','60',4);
+Результат: Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK
+Статус: Пройден
+
+DB-26 Повторное открытие ручной поездки
+Корректный запрос:
+INSERT manual_trip; backup; close; connect; SELECT;
+Недопустимые запросы:
+Результат: 150 км, расход 8, цена 60 и 4 участника восстановлены; точки для ручного расчёта отсутствуют.
+Статус: Пройден

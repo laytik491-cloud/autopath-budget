@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1800" viewBox="0 0 1800 1800">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="12" y="555" width="1776" height="250" fill="white" stroke="black" stroke-width="2.6"/>
+<polygon points="12,555 106,555 126,577 126,608 12,608" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="62" y="582.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">alt</text>
+<polyline points="12,680 1788,680" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<rect x="12" y="910" width="1776" height="760" fill="white" stroke="black" stroke-width="2.6"/>
+<polygon points="12,910 106,910 126,932 126,963 12,963" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="62" y="937.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">alt</text>
+<polyline points="12,1350 1788,1350" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="12,1485 1788,1485" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="120,160 120,1695" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="380,160 380,1695" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="640,160 640,1695" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="900,160 900,1695" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="1160,160 1160,1695" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="1420,160 1420,1695" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="1680,160 1680,1695" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<rect x="4.0" y="20" width="232" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="120" y="69.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Пользо-</text>
+<text x="120" y="111.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">ватель</text>
+<rect x="264.0" y="20" width="232" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="380" y="90.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">:PlannerUI</text>
+<rect x="524.0" y="20" width="232" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="640" y="69.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">:Trip</text>
+<text x="640" y="111.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Controller</text>
+<rect x="784.0" y="20" width="232" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="900" y="69.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">:Geo</text>
+<text x="900" y="111.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Adapter</text>
+<rect x="1044.0" y="20" width="232" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1160" y="69.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">:Routing</text>
+<text x="1160" y="111.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">API</text>
+<rect x="1304.0" y="20" width="232" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1420" y="69.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">:Fuel</text>
+<text x="1420" y="111.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Calculator</text>
+<rect x="1564.0" y="20" width="232" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1680" y="69.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">:Draft</text>
+<text x="1680" y="111.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Repository</text>
+<polygon points="12,555 106,555 126,577 126,608 12,608" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="62" y="582.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">alt</text>
+<polygon points="12,910 106,910 126,932 126,963 12,963" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="62" y="937.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">alt</text>
+<rect x="138" y="564.4" width="231.33333333333334" height="35.4" fill="white"/>
+<text x="145" y="583.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="start" fill="black">[ответ получен]</text>
+<rect x="138" y="693.4" width="514.0" height="35.4" fill="white"/>
+<text x="145" y="712.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="start" fill="black">[сетевая ошибка или тайм-аут 15 с]</text>
+<rect x="138" y="921.4" width="674.6666666666666" height="35.4" fill="white"/>
+<text x="145" y="940.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="start" fill="black">[успех; ответ актуален; параметры допустимы]</text>
+<rect x="138" y="1361.4" width="513.3333333333333" height="35.4" fill="white"/>
+<text x="145" y="1380.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="start" fill="black">[ошибка и текущая версия запроса]</text>
+<rect x="138" y="1496.4" width="515.3333333333333" height="35.4" fill="white"/>
+<text x="145" y="1515.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="start" fill="black">[ответ относится к прежней версии]</text>
+<polyline points="120,235 380,235" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="364.92108631275215,227.1497540157948 380,235 364.92108631275215,242.8502459842052" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="158.33333333333331" y="186.3" width="183.33333333333334" height="41.3" fill="white"/>
+<text x="250.0" y="208.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Построить</text>
+<polyline points="380,330 640,330" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="624.9210863127522,322.14975401579477 640,330 624.9210863127522,337.85024598420523" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="411.3333333333333" y="281.92" width="197.33333333333334" height="40.12" fill="white"/>
+<text x="510.0" y="303.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">buildRoute()</text>
+<polyline points="640,430 900,430" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="884.9210863127522,422.14975401579477 900,430 884.9210863127522,437.85024598420523" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="597.0" y="383.16" width="346.0" height="37.76" fill="white"/>
+<text x="770.0" y="403.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="32" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">route(points, requestId)</text>
+<polyline points="900,525 1160,525" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1144.921086312752,517.1497540157948 1160,525 1144.921086312752,532.8502459842052" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="857.3333333333334" y="478.78" width="345.3333333333333" height="36.58" fill="white"/>
+<text x="1030.0" y="498.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">GET /route/v1/driving/…</text>
+<polyline points="1160,640 900,640" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="915.0789136872478,647.8502459842052 900,640 915.0789136872478,632.1497540157948" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="930.6666666666666" y="592.54" width="198.66666666666666" height="38.94" fill="white"/>
+<text x="1030.0" y="613.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">HTTP-ответ</text>
+<polyline points="900,750 974,750 974,785 900,785" fill="none" stroke="black" stroke-width="2.6"/>
+<polygon points="900,785 916.0,793.0 916.0,777.0" fill="black"/>
+<rect x="988" y="748.4" width="204.66666666666666" height="35.4" fill="white"/>
+<text x="995" y="767.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="start" fill="black">setError(error)</text>
+<polyline points="900,855 640,855" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="655.0789136872478,862.8502459842052 640,855 655.0789136872478,847.1497540157948" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="597.6666666666666" y="807.54" width="344.6666666666667" height="38.94" fill="white"/>
+<text x="770.0" y="828.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">RouteSnapshot / error</text>
+<rect x="1420" y="995" width="18" height="65" fill="white" stroke="black" stroke-width="2.4"/>
+<polyline points="640,995 1420,995" fill="none" stroke="black" stroke-width="2.6"/>
+<polygon points="1420,995 1404.0,987.0 1404.0,1003.0" fill="black"/>
+<rect x="802.3333333333334" y="946.92" width="455.3333333333333" height="40.12" fill="white"/>
+<text x="1030.0" y="968.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">calculate(distanceM, params)</text>
+<polyline points="1420,1060 640,1060" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="655.0789136872478,1067.8502459842052 640,1060 655.0789136872478,1052.1497540157948" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="940.0" y="1011.92" width="180.0" height="40.12" fill="white"/>
+<text x="1030.0" y="1033.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">CostResult</text>
+<polyline points="640,1120 380,1120" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="395.07891368724785,1127.8502459842052 380,1120 395.07891368724785,1112.1497540157948" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="368.0" y="1072.54" width="284.0" height="38.94" fill="white"/>
+<text x="510.0" y="1093.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">render(ViewState)</text>
+<polyline points="640,1190 1680,1190" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1664.921086312752,1182.1497540157948 1680,1190 1664.921086312752,1197.8502459842052" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="1034.3333333333333" y="1141.92" width="251.33333333333334" height="40.12" fill="white"/>
+<text x="1160.0" y="1163.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">save(validDraft)</text>
+<polyline points="1680,1250 640,1250" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="655.0789136872478,1257.8502459842052 640,1250 655.0789136872478,1242.1497540157948" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="999.3333333333334" y="1201.92" width="321.3333333333333" height="40.12" fill="white"/>
+<text x="1160.0" y="1223.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">saved / storageError</text>
+<polyline points="640,1310 380,1310" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="395.07891368724785,1317.8502459842052 380,1310 395.07891368724785,1302.1497540157948" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="368.0" y="1262.54" width="284.0" height="38.94" fill="white"/>
+<text x="510.0" y="1283.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">render(ViewState)</text>
+<polyline points="640,1440 380,1440" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="395.07891368724785,1447.8502459842052 380,1440 395.07891368724785,1432.1497540157948" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="368.0" y="1392.54" width="284.0" height="38.94" fill="white"/>
+<text x="510.0" y="1413.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">render(ViewState)</text>
+<polyline points="640,1580 714,1580 714,1615 640,1615" fill="none" stroke="black" stroke-width="2.6"/>
+<polygon points="640,1615 656.0,1623.0 656.0,1607.0" fill="black"/>
+<rect x="728" y="1577.16" width="315.3333333333333" height="37.76" fill="white"/>
+<text x="735" y="1597.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="32" font-weight="normal" dominant-baseline="central" text-anchor="start" fill="black">Игнорировать ответ</text>
+<text x="900" y="1730.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Открытая стрелка — асинхронное сообщение; закрашенная — синхронный вызов.</text>
+<text x="900" y="1770.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Пунктирная стрелка — возврат результата; saved — завершение записи в IndexedDB.</text>
+</svg>

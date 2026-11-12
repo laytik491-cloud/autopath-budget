@@ -1,0 +1,69 @@
+{
+  "name": "autopath-budget",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Расчёт топлива и стоимости поездки",
+  "author": "Никита Самарин",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac dmg --universal --publish never",
+    "dist:win": "electron-builder --win nsis --x64 --publish never",
+    "android:sync": "cap sync android",
+    "android:build": "cd android && ./gradlew assembleRelease"
+  },
+  "devDependencies": {
+    "electron": "45.3.0",
+    "electron-builder": "26.18.0",
+    "@capacitor/cli": "8.6.0"
+  },
+  "dependencies": {
+    "@capacitor/core": "8.6.0",
+    "@capacitor/android": "8.6.0"
+  },
+  "build": {
+    "appId": "ru.samarin.autopathbudget",
+    "productName": "АвтоПуть Бюджет",
+    "artifactName": "AutoPath-Budget-${version}-${os}-${arch}.${ext}",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "desktop/**",
+      "app/**",
+      "package.json",
+      "!node_modules{,/**/*}"
+    ],
+    "asar": true,
+    "npmRebuild": false,
+    "mac": {
+      "category": "public.app-category.travel",
+      "icon": "build/icon.icns",
+      "minimumSystemVersion": "13.0",
+      "identity": "-",
+      "hardenedRuntime": false,
+      "notarize": false
+    },
+    "dmg": {
+      "title": "АвтоПуть Бюджет 1.0.0"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": true
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerLanguages": [
+        "ru_RU"
+      ],
+      "language": "1049",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}

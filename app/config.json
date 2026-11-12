@@ -1,0 +1,8 @@
+{
+  "appVersion": "1.0.0",
+  "geocodingUrl": "https://photon.komoot.io/api/",
+  "routingUrl": "https://router.project-osrm.org/route/v1/driving/",
+  "tileUrl": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+  "timeoutSeconds": 15,
+  "geocodingIntervalSeconds": 1
+}

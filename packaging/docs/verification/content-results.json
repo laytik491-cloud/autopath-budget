@@ -1,0 +1,14 @@
+[
+  {
+    "platform": "Windows",
+    "matchingSourceFiles": 34,
+    "version": "1.0.0",
+    "unneededNodeModules": false
+  },
+  {
+    "platform": "macOS",
+    "matchingSourceFiles": 34,
+    "version": "1.0.0",
+    "unneededNodeModules": false
+  }
+]

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2260" viewBox="0 0 1600 2260">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="20" y="20" width="1560" height="1930" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="800" y="65.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="43" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">Компоненты приложения в браузере</text>
+<rect x="60" y="125" width="650" height="530" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="385.0" y="163.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">Главный поток · JavaScript</text>
+<rect x="110" y="205" width="550" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="385.0" y="234.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="385.0" y="280.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="42" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">PlannerUI</text>
+<text x="385.0" y="330.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">HTML/CSS · Leaflet</text>
+<rect x="930" y="205" width="550" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1205.0" y="234.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="1205.0" y="280.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="42" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">AppShell</text>
+<text x="1205.0" y="330.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">JavaScript · Service Worker</text>
+<polyline points="660,280 930,280" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="914.9210863127522,272.14975401579477 930,280 914.9210863127522,287.85024598420523" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="701.6666666666666" y="231.26" width="196.66666666666666" height="31.86" fill="white"/>
+<text x="800" y="248.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="27" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«use» ресурсы</text>
+<rect x="110" y="485" width="550" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="385.0" y="513.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«artifact»</text>
+<text x="385.0" y="553.76" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">main.mjs</text>
+<text x="385.0" y="595.24" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Связь UI с Python</text>
+<polyline points="385,360 385,485" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="392.85024598420523,469.92108631275215 385,485 377.14975401579477,469.92108631275215" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="338.6666666666667" y="435.02" width="92.66666666666667" height="34.22" fill="white"/>
+<text x="385" y="453.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«use»</text>
+<rect x="930" y="485" width="550" height="140" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1205" y="522.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="39" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">CacheStorage</text>
+<text x="1205" y="560.31" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Оболочка, Python-модули,</text>
+<text x="1205" y="595.69" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Pyodide: .mjs, .wasm, stdlib</text>
+<polyline points="1205,360 1205,485" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="1212.8502459842052,469.92108631275215 1205,485 1197.1497540157948,469.92108631275215" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="1158.6666666666667" y="435.02" width="92.66666666666667" height="34.22" fill="white"/>
+<text x="1205" y="453.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«use»</text>
+<rect x="60" y="715" width="1480" height="955" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="800.0" y="753.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="35" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">Module Web Worker · Pyodide 314.0.7 · Python</text>
+<rect x="550" y="815" width="500" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="800.0" y="844.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="800.0" y="890.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="39" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">TripController</text>
+<text x="800.0" y="940.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">ITripService</text>
+<polyline points="385,625 385,680 120,680 120,790 800,790 800,815" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="807.8502459842052,799.9210863127522 800,815 792.1497540157948,799.9210863127522" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="161.0" y="660.78" width="198.0" height="36.58" fill="white"/>
+<text x="260" y="680.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">postMessage</text>
+<rect x="90" y="1095" width="430" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="305.0" y="1124.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="305.0" y="1170.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">GeoAdapter</text>
+<text x="305.0" y="1220.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">IGeoGateway · pyfetch</text>
+<rect x="590" y="1095" width="430" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="805.0" y="1124.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="805.0" y="1170.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">FuelCalculator</text>
+<text x="805.0" y="1220.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">ICalculator · decimal</text>
+<rect x="1080" y="1095" width="430" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1295.0" y="1124.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="1295.0" y="1170.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="36" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">DraftRepository</text>
+<text x="1295.0" y="1220.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">IDraftStore</text>
+<polyline points="650,970 650,1035 305,1035 305,1095" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="312.85024598420523,1079.921086312752 305,1095 297.14975401579477,1079.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="800,970 800,1095" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="807.8502459842052,1079.921086312752 800,1095 792.1497540157948,1079.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="950,970 950,1035 1295,1035 1295,1095" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="1302.8502459842052,1079.921086312752 1295,1095 1287.1497540157948,1079.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="90" y="1375" width="430" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="305.0" y="1404.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="305.0" y="1450.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="39" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">EventLog</text>
+<text x="305.0" y="1500.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">IEventLog</text>
+<polyline points="550,895 535,895 535,1335 305,1335 305,1375" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="312.85024598420523,1359.921086312752 305,1375 297.14975401579477,1359.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="590" y="1375" width="430" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="805" y="1415.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">SQLite / sqlite3</text>
+<text x="805" y="1462.31" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Копия .sqlite в MEMFS</text>
+<text x="805" y="1497.69" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Общая очередь операций</text>
+<rect x="1080" y="1375" width="430" height="155" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1295.0" y="1403.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«artifact»</text>
+<text x="1295.0" y="1453.7" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">storage.mjs</text>
+<text x="1295.0" y="1490.3" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Сохранение bytes через FFI</text>
+<polyline points="520,1452 590,1452" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="574.9210863127522,1444.1497540157948 590,1452 574.9210863127522,1459.8502459842052" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1295,1250 1295,1310 805,1310 805,1375" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="812.8502459842052,1359.921086312752 805,1375 797.1497540157948,1359.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="1020,1452 1080,1452" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="1064.921086312752,1444.1497540157948 1080,1452 1064.921086312752,1459.8502459842052" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="1080" y="1775" width="430" height="135" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1295" y="1808.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="39" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">IndexedDB</text>
+<text x="1295" y="1845.31" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">sqliteFiles: id = current</text>
+<text x="1295" y="1880.69" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Одна запись с файлом БД</text>
+<polyline points="1295,1530 1295,1775" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="1302.8502459842052,1759.921086312752 1295,1775 1287.1497540157948,1759.921086312752" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="1200.3333333333333" y="1702.02" width="189.33333333333334" height="34.22" fill="white"/>
+<text x="1295" y="1720.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«use» JS API</text>
+<rect x="40" y="2080" width="480" height="130" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="280.0" y="2109.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="280.0" y="2163.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">GeocodingAPI</text>
+<rect x="560" y="2080" width="480" height="130" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="800.0" y="2109.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="800.0" y="2163.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">RoutingAPI</text>
+<rect x="1080" y="2080" width="480" height="130" fill="white" stroke="black" stroke-width="2.6"/>
+<text x="1320.0" y="2109.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="30" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">«component»</text>
+<text x="1320.0" y="2163.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="37" font-weight="bold" dominant-baseline="central" text-anchor="middle" fill="black">TileService</text>
+<polyline points="260,1250 260,1290 75,1290 75,2010 280,2010 280,2080" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="287.85024598420523,2064.9210863127523 280,2080 272.14975401579477,2064.9210863127523" fill="none" stroke="black" stroke-width="2.6"/>
+<polyline points="75,2010 800,2010 800,2080" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="807.8502459842052,2064.9210863127523 800,2080 792.1497540157948,2064.9210863127523" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="436.6666666666667" y="1990.78" width="222.66666666666666" height="36.58" fill="white"/>
+<text x="548" y="2010.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">HTTPS / JSON</text>
+<polyline points="660,320 690,320 690,655 1560,655 1560,2010 1320,2010 1320,2080" fill="none" stroke="black" stroke-width="2.6" stroke-dasharray="10 7"/>
+<polyline points="1327.8502459842052,2064.9210863127523 1320,2080 1312.1497540157948,2064.9210863127523" fill="none" stroke="black" stroke-width="2.6"/>
+<rect x="1165.3333333333333" y="1990.78" width="229.33333333333334" height="36.58" fill="white"/>
+<text x="1280" y="2010.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">HTTPS / тайлы</text>
+<text x="800" y="2240.0" font-family="Arial, DejaVu Sans, sans-serif" font-size="28" font-weight="normal" dominant-baseline="central" text-anchor="middle" fill="black">Пунктирная стрелка — использование; .mjs — технические модули связи.</text>
+</svg>

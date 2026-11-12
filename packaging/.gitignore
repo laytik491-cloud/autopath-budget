@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+._*
+android/.gradle/
+android/local.properties
+android/app/build/
+android/build/
+*.jks
+*.keystore
+key.properties
+android/capacitor-cordova-android-plugins/build/
+*.p12
+*.pfx
+signing/

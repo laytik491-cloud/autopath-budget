@@ -1,0 +1,298 @@
+{
+  "sqlite_version": "3.53.1",
+  "run_utc": "2026-11-12T04:00:14.949358+00:00",
+  "database": "autopath-test.sqlite",
+  "checks": 26,
+  "passed": 26,
+  "results": [
+    {
+      "id": "DB-01",
+      "title": "Создание схемы",
+      "good_sql": "schema.sql; SELECT name FROM sqlite_master; PRAGMA foreign_keys; PRAGMA user_version;",
+      "bad_sql": [],
+      "actual": "Созданы draft, point, route, manual_trip, event_log; foreign_keys = 1; user_version = 2.",
+      "detail": "Созданы draft, point, route, manual_trip, event_log; foreign_keys = 1; user_version = 2.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-02",
+      "title": "INSERT SELECT и JOIN",
+      "good_sql": "SELECT d.id,a.label,b.label,r.distance_m,r.duration_s,d.consumption_text,d.price_text,d.participants\nFROM draft d JOIN point a ON a.draft_id=d.id AND a.position=d.start_position\nJOIN point b ON b.draft_id=d.id AND b.position=d.end_position\nJOIN route r ON r.draft_id=d.id AND r.points_revision=d.points_revision;",
+      "bad_sql": [],
+      "actual": "seed.sql добавил 1 черновик, 2 точки, 1 маршрут и 2 события. JOIN: current; Точка A → Точка B; 600000 м; 7200 с; C=8; F=60; N=4.",
+      "detail": "seed.sql добавил 1 черновик, 2 точки, 1 маршрут и 2 события. JOIN: current; Точка A → Точка B; 600000 м; 7200 с; C=8; F=60; N=4.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-03",
+      "title": "UNIQUE для координат точек",
+      "good_sql": "UPDATE point SET lat=60.1,lon=151.9 WHERE position=1;",
+      "bad_sql": [
+        "UPDATE point SET lat=59.5,lon=150.8 WHERE position=1;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_UNIQUE",
+      "detail": "Разные точки приняты; совпадающие точки одного черновика запрещены.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-04",
+      "title": "NOT NULL для обязательного поля",
+      "good_sql": "UPDATE point SET label='Точка B2' WHERE position=1;",
+      "bad_sql": [
+        "UPDATE point SET label=NULL WHERE position=1;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_NOTNULL",
+      "detail": "Непустая подпись принята; NULL отклонён.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-05",
+      "title": "Внешний ключ точки",
+      "good_sql": "UPDATE point SET label='Точка B2' WHERE draft_id='current' AND position=1;",
+      "bad_sql": [
+        "INSERT INTO point VALUES ('missing',0,'Точка X',1,2);"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_FOREIGNKEY",
+      "detail": "Существующий родитель принят; ссылка missing отклонена.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-06",
+      "title": "Единственный текущий черновик",
+      "good_sql": "UPDATE draft SET revision=2 WHERE id='current';",
+      "bad_sql": [
+        "INSERT INTO draft (id,schema_version,revision,points_revision,consumption_text,price_text,participants) VALUES ('other',1,1,1,'8','60',4);"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK",
+      "detail": "Допускается только id=current; другой идентификатор запрещён.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-07",
+      "title": "Первичный ключ черновика",
+      "good_sql": "UPDATE draft SET revision=2 WHERE id='current';",
+      "bad_sql": [
+        "INSERT INTO draft (id,schema_version,revision,points_revision,consumption_text,price_text,participants) VALUES ('current',1,2,2,'8','60',4);"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_PRIMARYKEY",
+      "detail": "Обновление принято; второй current отклонён по PK.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-08",
+      "title": "Две обязательные точки на COMMIT",
+      "good_sql": "UPDATE point SET label='Точка B2' WHERE position=1;",
+      "bad_sql": [
+        "DELETE FROM point WHERE position=1;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_FOREIGNKEY",
+      "detail": "Полный черновик принят; отсутствие конца отклонено при COMMIT, затем выполнен ROLLBACK.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-09",
+      "title": "Обязательный маршрут на COMMIT",
+      "good_sql": "UPDATE route SET duration_s=3600 WHERE draft_id='current';",
+      "bad_sql": [
+        "DELETE FROM route;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_FOREIGNKEY",
+      "detail": "Маршрут с положительным временем принят; отсутствие маршрута отклонено при COMMIT.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-10",
+      "title": "Участники только целые 1–9",
+      "good_sql": "UPDATE draft SET participants=1; UPDATE draft SET participants=9;",
+      "bad_sql": [
+        "UPDATE draft SET participants=0;",
+        "UPDATE draft SET participants=10;",
+        "UPDATE draft SET participants=1.5;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "1 и 9 приняты; 0, 10 и 1,5 отклонены.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-11",
+      "title": "Расход 0,1–100 точно",
+      "good_sql": "UPDATE draft SET consumption_text='0.1'; UPDATE draft SET consumption_text='100';",
+      "bad_sql": [
+        "UPDATE draft SET consumption_text='0.099';",
+        "UPDATE draft SET consumption_text='100.001';",
+        "UPDATE draft SET consumption_text='100.00000000000000001';"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "Границы приняты; значения за пределами, включая 100.00000000000000001, отклонены без преобразования в REAL.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-12",
+      "title": "Цена 0,01–1000 точно",
+      "good_sql": "UPDATE draft SET price_text='0.01'; UPDATE draft SET price_text='1000';",
+      "bad_sql": [
+        "UPDATE draft SET price_text='0.009';",
+        "UPDATE draft SET price_text='1000.001';",
+        "UPDATE draft SET price_text='1000.00000000000000001';"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "Границы приняты; три значения за пределами отклонены.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-13",
+      "title": "Диапазоны координат",
+      "good_sql": "UPDATE point SET lat=-90,lon=-180 WHERE position=0; UPDATE point SET lat=90,lon=180 WHERE position=1;",
+      "bad_sql": [
+        "UPDATE point SET lat=90.001 WHERE position=0;",
+        "UPDATE point SET lon=180.001 WHERE position=0;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "Широта ±90 и долгота ±180 приняты; выход за границы отклонён.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-14",
+      "title": "Положительное конечное расстояние",
+      "good_sql": "UPDATE route SET distance_m=1;",
+      "bad_sql": [
+        "UPDATE route SET distance_m=0;",
+        "UPDATE route SET distance_m=-1;",
+        "UPDATE route SET distance_m=1e999;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "1 м принят; 0, −1 и бесконечность отклонены.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-15",
+      "title": "Положительная конечная длительность",
+      "good_sql": "UPDATE route SET duration_s=1;",
+      "bad_sql": [
+        "UPDATE route SET duration_s=0;",
+        "UPDATE route SET duration_s=1e999;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "1 с принята; 0 и бесконечность отклонены.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-16",
+      "title": "Поддерживаемая версия DTO",
+      "good_sql": "UPDATE draft SET schema_version=1;",
+      "bad_sql": [
+        "UPDATE draft SET schema_version=99;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK",
+      "detail": "Версия 1 принята; 99 отклонена. Для новой версии необходима миграция.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-17",
+      "title": "Маршрут связан с версией точек",
+      "good_sql": "UPDATE route SET distance_m=300000 WHERE points_revision=1;",
+      "bad_sql": [
+        "UPDATE route SET points_revision=2;",
+        "UPDATE draft SET points_revision=2;"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_FOREIGNKEY, SQLITE_CONSTRAINT_FOREIGNKEY",
+      "detail": "Совпадающая версия принята; рассогласование route и draft отклонено.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-18",
+      "title": "Формат десятичного текста",
+      "good_sql": "UPDATE draft SET consumption_text='8.1234567890123456789';",
+      "bad_sql": [
+        "UPDATE draft SET consumption_text='8,5';",
+        "UPDATE draft SET consumption_text='abc';",
+        "UPDATE draft SET consumption_text='1e1';"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "Десятичный текст сохранён; запятая, буквы и экспонента в физическом формате отклонены. Интерфейс нормализует их до записи.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-19",
+      "title": "Распознаваемая дата маршрута",
+      "good_sql": "UPDATE route SET obtained_at='2026-10-13T00:00:00Z';",
+      "bad_sql": [
+        "UPDATE route SET obtained_at='not-a-date';"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK",
+      "detail": "Дата ISO 8601 принята; нераспознаваемая строка отклонена. Полная проверка даты остаётся в адаптере.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-20",
+      "title": "Журнал последних 100 событий",
+      "good_sql": "DELETE FROM event_log;\nWITH RECURSIVE seq(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM seq WHERE n<100)\nINSERT INTO event_log(occurred_at,code,app_version,status)\nSELECT strftime('%Y-%m-%dT%H:%M:%SZ','2026-10-12T13:00:00Z','+'||n||' seconds'),'ROUTE_READY','1.0.0','ready' FROM seq;\nINSERT INTO event_log(occurred_at,code,app_version,status) VALUES ('2026-10-12T13:02:00Z','ROUTE_READY','1.0.0','ready');",
+      "bad_sql": [],
+      "actual": "После 100 добавлений — 100 строк. После 101-го — 100 строк, первое из добавленных событий удалено.",
+      "detail": "После 100 добавлений — 100 строк. После 101-го — 100 строк, первое из добавленных событий удалено.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-21",
+      "title": "Разрешённые поля журнала",
+      "good_sql": "INSERT INTO event_log(occurred_at,code,app_version,status) VALUES ('2026-10-12T13:00:02Z','APP_UPDATED','1.0.0','updated');",
+      "bad_sql": [
+        "UPDATE event_log SET code='USER_ADDRESS';",
+        "UPDATE event_log SET status='password';"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "Разрешённый код и статус приняты; произвольные значения отклонены. Полей адреса, координат и текста запроса в таблице нет.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-22",
+      "title": "Откат неполного сохранения",
+      "good_sql": "BEGIN; UPDATE draft SET consumption_text='10'; DELETE FROM point WHERE position=1; COMMIT; ROLLBACK;",
+      "bad_sql": [],
+      "actual": "COMMIT отклонён по FK; после ROLLBACK расход снова 8, обе точки на месте.",
+      "detail": "COMMIT отклонён по FK; после ROLLBACK расход снова 8, обе точки на месте.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-23",
+      "title": "Каскадная и полная очистка",
+      "good_sql": "BEGIN; DELETE FROM draft; DELETE FROM event_log; COMMIT;",
+      "bad_sql": [],
+      "actual": "В draft, point, route и event_log по 0 строк. Зависимые точки и маршрут удалены каскадом.",
+      "detail": "В draft, point, route и event_log по 0 строк. Зависимые точки и маршрут удалены каскадом.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-24",
+      "title": "Повторное открытие и целостность",
+      "good_sql": "backup в файл; close; connect; JOIN; PRAGMA foreign_key_check; PRAGMA integrity_check;",
+      "bad_sql": [],
+      "actual": "После закрытия и повторного открытия файла TD-01 восстановлен. foreign_key_check: 0 нарушений; integrity_check: ok. Браузерный IndexedDB здесь не проверялся.",
+      "detail": "После закрытия и повторного открытия файла TD-01 восстановлен. foreign_key_check: 0 нарушений; integrity_check: ok. Браузерный IndexedDB здесь не проверялся.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-25",
+      "title": "Ограничения ручного расстояния",
+      "good_sql": "INSERT INTO manual_trip VALUES ('current',1,'150','8','60',4);",
+      "bad_sql": [
+        "INSERT INTO manual_trip VALUES ('current',1,'0','8','60',4);",
+        "INSERT INTO manual_trip VALUES ('current',1,'-1','8','60',4);",
+        "INSERT INTO manual_trip VALUES ('current',1,'1000001','8','60',4);",
+        "INSERT INTO manual_trip VALUES ('current',1,'abc','8','60',4);"
+      ],
+      "actual": "Корректный запрос выполнен; недопустимые варианты отклонены: SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK, SQLITE_CONSTRAINT_CHECK",
+      "detail": "Допустимое расстояние принято; ноль, отрицательное, превышение и текст отклонены.",
+      "status": "Пройден"
+    },
+    {
+      "id": "DB-26",
+      "title": "Повторное открытие ручной поездки",
+      "good_sql": "INSERT manual_trip; backup; close; connect; SELECT;",
+      "bad_sql": [],
+      "actual": "150 км, расход 8, цена 60 и 4 участника восстановлены; точки для ручного расчёта отсутствуют.",
+      "detail": "150 км, расход 8, цена 60 и 4 участника восстановлены; точки для ручного расчёта отсутствуют.",
+      "status": "Пройден"
+    }
+  ]
+}

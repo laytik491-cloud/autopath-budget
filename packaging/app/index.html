@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111213">
+  <meta name="color-scheme" content="dark">
+  <title>АвтоПуть Бюджет</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="vendor/icons/icon-192.png">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="vendor/leaflet/leaflet.js" defer></script>
+  <script type="module" src="main.mjs"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#planner" aria-label="АвтоПуть Бюджет, поездка">
+      <img class="brand-icon" src="icon.svg" alt="" width="34" height="34">
+      <span>АвтоПуть <b>Бюджет</b></span>
+    </a>
+    <nav aria-label="Основная навигация">
+      <a href="#planner" class="active">Поездка</a>
+      <a href="#result">Расчёт</a>
+      <a href="#help">Справка</a>
+    </nav>
+  </header>
+  <main>
+    <div id="startup" class="notice" role="status">Загрузка расчёта. Первый запуск может занять несколько секунд.</div>
+    <div id="update" class="notice" hidden>Доступно обновление. <button id="update-button" class="text-button">Обновить</button></div>
+    <section id="planner" class="view">
+      <div class="page-heading"><h1>Поездка</h1><span id="planner-save-state" class="muted small" role="status" hidden></span></div>
+      <div class="planner-grid">
+        <div class="panel form-panel">
+          <h2 class="form-title">Расстояние поездки</h2>
+          <div class="mode-switch" aria-label="Способ расчёта"><button id="mode-map" class="selected" aria-pressed="true" disabled>По карте</button><button id="mode-manual" aria-pressed="false" disabled>По расстоянию</button></div>
+          <div id="manual-fields" hidden>
+            <label for="manual-distance">Расстояние <span class="unit">км</span></label>
+            <input id="manual-distance" placeholder="Например, 150" inputmode="decimal" maxlength="30" aria-describedby="error-distanceText manual-hint" disabled>
+            <span id="error-distanceText" class="field-error"></span>
+            <p id="manual-hint" class="input-hint">От 0,01 до 1 000 000 км. Интернет не нужен.</p>
+          </div>
+          <div id="route-fields">
+          <div class="point-inputs">
+          <div class="point-field">
+            <label for="point-0"><span class="point-tag">А</span>Откуда</label>
+            <div class="search-row"><input id="point-0" placeholder="Адрес или координаты" autocomplete="off"><button class="search secondary" data-index="0" disabled>Найти</button></div>
+            <div id="results-0" class="search-results"></div>
+            <span id="confirmed-0" class="point-status">Точка не выбрана</span>
+          </div>
+          <div class="point-field">
+            <label for="point-1"><span class="point-tag end">Б</span>Куда</label>
+            <div class="search-row"><input id="point-1" placeholder="Адрес или координаты" autocomplete="off"><button class="search secondary" data-index="1" disabled>Найти</button></div>
+            <div id="results-1" class="search-results"></div>
+            <span id="confirmed-1" class="point-status">Точка не выбрана</span>
+          </div>
+          </div>
+          <button id="build" class="primary full" disabled>Построить маршрут <span aria-hidden="true">↗</span></button>
+          </div>
+          <div id="route-message" class="route-message" role="status" aria-live="polite">Выберите две точки.</div>
+          <div class="divider"></div>
+          <h2 class="parameters-title">Автомобиль и участники</h2>
+          <div class="parameters">
+            <div><label for="consumption">Расход <span class="unit">л/100 км</span></label><input id="consumption" value="8" inputmode="decimal" maxlength="30"><span id="error-consumption" class="field-error"></span></div>
+            <div><label for="price">Цена топлива <span class="unit">₽/л</span></label><input id="price" value="60" inputmode="decimal" maxlength="30"><span id="error-price" class="field-error"></span></div>
+          <div class="participants-group"><label for="participants">Участники <span class="unit">с водителем</span></label>
+          <div class="participants-row"><button id="minus" class="secondary" aria-label="Уменьшить число участников" disabled>−</button><input id="participants" value="4" inputmode="numeric" maxlength="10"><button id="plus" class="secondary" aria-label="Увеличить число участников" disabled>+</button></div>
+          <span id="error-participants" class="field-error"></span></div></div>
+        </div>
+        <div class="map-column">
+          <div id="map-panel" class="map-panel">
+            <div class="map-toolbar"><h2>Карта</h2><button id="fit-route" class="secondary" disabled>Весь маршрут</button><div class="point-switch" aria-label="Выбор точки на карте"><button id="pick-0" class="selected" aria-pressed="true"><span class="pick-prefix">Точка </span>А</button><button id="pick-1" aria-pressed="false"><span class="pick-prefix">Точка </span>Б</button></div></div>
+            <div id="map" aria-label="Карта маршрута"></div>
+            <p id="map-warning" class="map-hint">Выберите А и Б на карте. Метки можно перемещать.</p>
+          </div>
+          <div class="trip-summary panel" aria-live="polite" aria-atomic="true">
+            <div class="summary-heading"><h2>Расчёт топлива</h2><a href="#result">Подробнее ↗</a></div>
+            <div class="summary-values">
+              <div><span>Расстояние</span><strong id="distance">— км</strong></div>
+              <div><span>Топливо</span><strong id="mini-litres">— л</strong></div>
+              <div><span>Общая стоимость</span><strong id="mini-total">— ₽</strong></div>
+              <div><span>На человека</span><strong id="mini-cost">— ₽</strong></div>
+            </div>
+            <p id="duration-row" class="muted small">Время в пути: <span id="duration">—</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="result" class="view" hidden>
+      <div class="page-heading"><h1>Расчёт топлива</h1><a class="secondary button-link" href="#planner">Изменить поездку</a></div>
+      <p id="result-empty" class="empty-state">Выберите точки и постройте маршрут на экране «Поездка».</p>
+      <div id="result-content" hidden>
+        <div class="result-grid">
+          <div class="panel result-main"><span>На человека</span><strong id="per-person">— ₽</strong><p id="participants-note"></p></div>
+          <div class="panel result-totals"><div><span class="muted">Общая стоимость</span><strong id="total" class="result-value">— ₽</strong></div><div><span class="muted">Топливо</span><strong id="litres" class="result-value">— л</strong></div></div>
+        </div>
+        <div class="panel calculation-details"><h2>Детали</h2><p id="route-description" class="route-description"></p><p id="formula"></p><p id="route-date" class="muted small"></p><p class="muted small">Платные дороги, парковки, питание и проживание не учитываются.</p></div>
+      </div>
+      <div class="result-actions"><div><p id="save-state" role="status" class="muted" hidden></p><button id="retry-save" class="secondary" hidden>Повторить сохранение</button></div><button id="clear" class="danger" disabled>Очистить поездку</button></div>
+    </section>
+    <section id="help" class="view" hidden>
+      <div class="page-heading"><h1>Справка</h1></div>
+      <div class="help-grid">
+        <div class="panel"><h2>По расстоянию</h2><p>Выберите режим и введите километры от 0,01 до 1 000 000. Расчёт появится сразу. Точки и интернет не нужны.</p></div>
+        <div class="panel"><h2>По карте</h2><p>Поставьте точку А, затем Б и нажмите «Построить маршрут». Можно найти адрес или ввести координаты через запятую.</p><p>«Весь маршрут» показывает путь целиком. Страны и города подписаны на общем масштабе, улицы и небольшие населённые пункты — при приближении.</p></div>
+        <div class="panel"><h2>Параметры и результат</h2><p>Расход — 0,1–100 л/100 км, цена — 0,01–1000 ₽/л, участников с водителем — от 1 до 9. Подходят точка и запятая.</p><p>Изменения применяются сразу. В стоимость входит только топливо. Доля участника — общая сумма, разделённая поровну.</p></div>
+        <div class="panel"><h2>Сохранение и сеть</h2><p>Последний корректный расчёт сохраняется в этом браузере. Ошибочный ввод его не заменяет. Для карты и нового пути нужен интернет.</p><p>Автономный запуск подготавливается при первой полной загрузке с интернетом. Очистка — в разделе «Расчёт».</p></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>АвтоПуть Бюджет <span class="version">1.0.0</span></span><span class="credits">© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> · <a href="https://github.com/komoot/photon" target="_blank" rel="noopener noreferrer">Photon</a> · <a href="https://project-osrm.org/" target="_blank" rel="noopener noreferrer">OSRM</a></span></footer>
+  <dialog id="clear-dialog"><h2>Очистить поездку?</h2><p>Расстояние, точки, маршрут, параметры и журнал будут удалены из этого браузера.</p><div class="dialog-actions"><button id="cancel-clear" class="secondary">Отмена</button><button id="confirm-clear" class="danger">Очистить</button></div></dialog>
+</body>
+</html>

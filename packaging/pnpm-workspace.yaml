@@ -1,0 +1,2 @@
+minimumReleaseAgeExclude:
+  - electron@45.3.0

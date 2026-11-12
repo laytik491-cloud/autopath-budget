@@ -1,0 +1,149 @@
+{
+  "version": "1.0.0",
+  "browser": "151.0.7922.34",
+  "date": "2026-11-11",
+  "checks": [
+    {
+      "id": "INF-01",
+      "status": "Пройден",
+      "fact": {
+        "costs": {
+          "distanceKm": "600.00",
+          "litres": "48.00",
+          "total": "2880.00",
+          "perPerson": "720.00"
+        },
+        "saveStatus": "saved",
+        "source": "mocked OSRM600000m"
+      }
+    },
+    {
+      "id": "INF-02",
+      "status": "Пройден",
+      "fact": {
+        "bytes": 65536,
+        "header": "SQLite format 3",
+        "costs": {
+          "distanceKm": "600.00",
+          "litres": "48.00",
+          "total": "2880.00",
+          "perPerson": "720.00"
+        }
+      }
+    },
+    {
+      "id": "INF-03",
+      "status": "Пройден",
+      "fact": {
+        "method": "test-only adapter calls real IndexedDBtransaction.abort()",
+        "memoryTotal": "3120.00",
+        "failedStatus": "error",
+        "restoredTotal": "2880.00"
+      }
+    },
+    {
+      "id": "INF-04",
+      "status": "Пройден",
+      "fact": {
+        "restoreStatus": "error",
+        "message": "Файл базы данных повреждён",
+        "afterBuildStatus": "error",
+        "saved": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "id": "INF-05",
+      "status": "Пройден",
+      "fact": {
+        "route": null,
+        "costs": null,
+        "points": [
+          null,
+          null
+        ],
+        "previousResponseStatus": "saving"
+      }
+    },
+    {
+      "id": "INF-07",
+      "status": "Пройден",
+      "fact": {
+        "exactLegacyPairNotRestored": true,
+        "atomicClearPersisted": true,
+        "cleared": {
+          "route": null,
+          "costs": null,
+          "points": [
+            null,
+            null
+          ]
+        },
+        "reopened": {
+          "route": null,
+          "costs": null,
+          "points": [
+            null,
+            null
+          ]
+        }
+      }
+    },
+    {
+      "id": "INF-08",
+      "status": "Пройден",
+      "fact": {
+        "abortedManualCandidate": "195.00",
+        "durableManualResult": "180.00"
+      }
+    },
+    {
+      "id": "INF-09",
+      "status": "Пройден",
+      "fact": {
+        "version": 2,
+        "costs": {
+          "distanceKm": "600.00",
+          "litres": "48.00",
+          "total": "2880.00",
+          "perPerson": "720.00"
+        },
+        "points": [
+          {
+            "label": "A",
+            "lat": 59.5,
+            "lon": 150.8
+          },
+          {
+            "label": "B",
+            "lat": 60.1,
+            "lon": 151.9
+          }
+        ]
+      }
+    },
+    {
+      "id": "INF-06",
+      "status": "Пройден",
+      "fact": {
+        "cache": "autopath-budget-1.0.0",
+        "resources": 30,
+        "externalResources": 0,
+        "costs": {
+          "distanceKm": "600.00",
+          "litres": "48.00",
+          "total": "3120.00",
+          "perPerson": "1560.00"
+        },
+        "offlineWorkerRestart": true,
+        "saveStatus": "saved"
+      }
+    }
+  ],
+  "errors": [],
+  "note": "Маршрутизатор подменён только в тестовом профиле: фиксированные600000м/7200с. Это проверка хранения и расчёта, не свидетельство реального автомобильного маршрута. Исходники приложения не изменялись."
+}

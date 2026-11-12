@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "id": "EL-05",
+  "passed": true,
+  "externalNetwork": false,
+  "profile": "fresh",
+  "actual": "Первый запуск DMG с недоступным прокси: встроенный Python и ручной расчёт 150 км → 12 л, 720 ₽, 180 ₽/чел."
+}

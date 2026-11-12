@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "browser": "151.0.7922.34",
+  "checks": [
+    {
+      "id": "MAP-01",
+      "status": "Пройден",
+      "fact": "Атрибуция Leaflet и OpenStreetMap сохранена без значка флага."
+    },
+    {
+      "id": "MAP-country",
+      "status": "Пройден",
+      "fact": {
+        "zoom": 3,
+        "center": [
+          54,
+          65
+        ],
+        "tiles": 15,
+        "filter": "none",
+        "source": "Живые тайлы OpenStreetMap; подмена отсутствует"
+      }
+    },
+    {
+      "id": "MAP-city",
+      "status": "Пройден",
+      "fact": {
+        "zoom": 13,
+        "center": [
+          59.565,
+          150.81
+        ],
+        "tiles": 15,
+        "filter": "none",
+        "source": "Живые тайлы OpenStreetMap; подмена отсутствует"
+      }
+    },
+    {
+      "id": "MAP-street",
+      "status": "Пройден",
+      "fact": {
+        "zoom": 16,
+        "center": [
+          55.752,
+          37.62
+        ],
+        "tiles": 15,
+        "filter": "none",
+        "source": "Живые тайлы OpenStreetMap; подмена отсутствует"
+      }
+    },
+    {
+      "id": "Снимки MVP",
+      "status": "Пройден",
+      "fact": "Живой маршрут и ручные 150 км; актуальные экраны сохранены без демонстрационных режимов."
+    }
+  ],
+  "errors": [],
+  "labels_visually_verified": true,
+  "date": "2026-11-11"
+}

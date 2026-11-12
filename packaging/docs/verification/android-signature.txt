@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): false
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Nikita Samarin, OU=AutoPath Budget
+Signer #1 certificate SHA-256 digest: 9ac96d82b4038f23ec75539b59cd274e97da0e3eea6ff938186a6f97d68860fc
+Signer #1 certificate SHA-1 digest: 8a28fe500342926650782f31f4094e71c8b38ffd
+Signer #1 certificate MD5 digest: 79840baca34d74cf1c6c450ebbe6e898
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 71570f3cfe364fad9ae92a12289484313f345d000fb75613fbe456f09c281b2c
+Signer #1 public key SHA-1 digest: 5bb191a3e71fed54107f0775cb2cab8731f7e3e1
+Signer #1 public key MD5 digest: 53cb6c407f4bb7b043e8ca57923c3c31

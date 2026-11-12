@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "date": "2026-11-11",
+  "browser": "26.5",
+  "platform": "Playwright WebKit на macOS; это не физическое iOS и не приложение Safari",
+  "checks": [
+    {
+      "id": "WK-01",
+      "status": "Пройден",
+      "actual": "Ручной ввод, запятая, быстрые правки, онлайн reload и пересчёт открытой вкладки без сети: 150 км, 12,75 л, 765 ₽, 255 ₽/чел."
+    },
+    {
+      "id": "WK-02",
+      "status": "Не пройден",
+      "actual": "page.reload: WebKit encountered an internal error\nCall log:\n\u001b[2m  - waiting for navigation until \"domcontentloaded\"\u001b[22m\n",
+      "limitation": "При эмуляции отключения сети в этом WebKit полная навигация и fetch локального ресурса завершаются внутренней ошибкой, несмотря на активный Service Worker и 30 ресурсов в кэше. Причина и поведение настоящего Safari/iOS требуют отдельной проверки."
+    }
+  ],
+  "errors": []
+}

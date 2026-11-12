@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "android": {
+    "matchingWebSourceFiles": 32,
+    "excludedWebFile": ".nojekyll (GitHub Pages marker)",
+    "apkSignatureVerified": true
+  },
+  "windows": {
+    "installerBuilt": true,
+    "runtimeTested": false,
+    "payloadArch": "x64"
+  }
+}

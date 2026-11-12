@@ -1,0 +1,225 @@
+{
+  "release": "MVP 1.0.0",
+  "version": "1.0.0",
+  "date": "2026-11-11",
+  "browser": "151.0.7922.34",
+  "checks": [
+    {
+      "id": "LR-01",
+      "name": "Полный путь и обе метки",
+      "status": "Пройден",
+      "fact": {
+        "count": 56063,
+        "minX": 33,
+        "minY": 109,
+        "maxX": 945,
+        "maxY": 266,
+        "width": 978,
+        "height": 375,
+        "zoom": 3.5,
+        "markers": [
+          {
+            "x": 1291,
+            "y": 356,
+            "width": 30,
+            "height": 30,
+            "top": 356,
+            "right": 1321,
+            "bottom": 386,
+            "left": 1291
+          },
+          {
+            "x": 381,
+            "y": 413,
+            "width": 30,
+            "height": 30,
+            "top": 413,
+            "right": 411,
+            "bottom": 443,
+            "left": 381
+          }
+        ],
+        "map": {
+          "x": 363,
+          "y": 175,
+          "width": 978,
+          "height": 374.8125,
+          "top": 175,
+          "right": 1341,
+          "bottom": 549.8125,
+          "left": 363
+        }
+      }
+    },
+    {
+      "id": "LR-02",
+      "name": "Цена сохраняет линию и ручной масштаб",
+      "status": "Пройден",
+      "fact": {
+        "before": {
+          "layer": 54,
+          "zoom": 4
+        },
+        "after": {
+          "layer": 54,
+          "zoom": 4,
+          "sizes": [
+            625,
+            613
+          ],
+          "geometries": 0
+        }
+      }
+    },
+    {
+      "id": "LR-03",
+      "name": "Возврат к целому пути одним нажатием",
+      "status": "Пройден",
+      "fact": "После увеличения Магадана кнопка вернула весь путь."
+    },
+    {
+      "id": "LR-04",
+      "name": "Карта и результат без прокрутки",
+      "status": "Пройден",
+      "fact": [
+        {
+          "width": 1440,
+          "height": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900,
+          "formBottom": 699.53125,
+          "mapHeight": 505.234375,
+          "summaryBottom": 858,
+          "footerTop": 872,
+          "routeFits": true
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "scrollWidth": 1366,
+          "scrollHeight": 768,
+          "formBottom": 649.140625,
+          "mapHeight": 374.8125,
+          "summaryBottom": 726,
+          "footerTop": 740,
+          "routeFits": true
+        },
+        {
+          "width": 1280,
+          "height": 720,
+          "scrollWidth": 1280,
+          "scrollHeight": 720,
+          "formBottom": 649.140625,
+          "mapHeight": 328.625,
+          "summaryBottom": 678,
+          "footerTop": 692,
+          "routeFits": true
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "scrollWidth": 1024,
+          "scrollHeight": 768,
+          "formBottom": 649.140625,
+          "mapHeight": 380.078125,
+          "summaryBottom": 726,
+          "footerTop": 740,
+          "routeFits": true
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "scrollWidth": 768,
+          "scrollHeight": 1024,
+          "formBottom": 417.953125,
+          "mapHeight": 369.796875,
+          "summaryBottom": 990,
+          "footerTop": 1000,
+          "routeFits": true
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "scrollWidth": 390,
+          "scrollHeight": 844,
+          "formBottom": 417.953125,
+          "mapHeight": 166.546875,
+          "summaryBottom": 810,
+          "footerTop": 820,
+          "routeFits": true
+        },
+        {
+          "width": 360,
+          "height": 800,
+          "scrollWidth": 360,
+          "scrollHeight": 800,
+          "formBottom": 415.953125,
+          "mapHeight": 126.546875,
+          "summaryBottom": 768,
+          "footerTop": 776,
+          "routeFits": true
+        }
+      ]
+    },
+    {
+      "id": "LR-05",
+      "name": "Переключение ручного режима и возврат линии",
+      "status": "Пройден",
+      "fact": 56063
+    },
+    {
+      "id": "LR-06",
+      "name": "Справка и удалённый текст",
+      "status": "Пройден",
+      "fact": {
+        "removed": true,
+        "views": [
+          {
+            "view": "help",
+            "width": 1366,
+            "height": 768,
+            "scrollHeight": 768,
+            "scrollWidth": 1366
+          },
+          {
+            "view": "result",
+            "width": 1366,
+            "height": 768,
+            "scrollHeight": 768,
+            "scrollWidth": 1366
+          },
+          {
+            "view": "help",
+            "width": 390,
+            "height": 844,
+            "scrollHeight": 844,
+            "scrollWidth": 390
+          },
+          {
+            "view": "result",
+            "width": 390,
+            "height": 844,
+            "scrollHeight": 844,
+            "scrollWidth": 390
+          },
+          {
+            "view": "help",
+            "width": 360,
+            "height": 800,
+            "scrollHeight": 800,
+            "scrollWidth": 360
+          },
+          {
+            "view": "result",
+            "width": 360,
+            "height": 800,
+            "scrollHeight": 800,
+            "scrollWidth": 360
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "note": "Полная геометрия — сохранённый реальный ответ OSRM от 10.11.2026, 56063 точки, 9141358 м. Поиск названий подменён в тесте соответствующими координатами. LIVE-01 отдельного протокола проверяет сервис без подмены."
+}
